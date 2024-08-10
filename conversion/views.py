@@ -58,6 +58,7 @@ def step2(request):
         print(dir(request))
         print(request.body)
         data = request.POST.dict()
+        print(data)
         fname = generate_eft(data)
         FILES.append(fname)
     return render(request, "conversion/download.html", context={'files':FILES})

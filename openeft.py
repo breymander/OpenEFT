@@ -35,7 +35,7 @@ def browser():
     os._exit(1)
     
 if __name__ == '__main__':
-    br = threading.Thread(target=browser, args=())
-    br.start()
-    main(["openeft.py", "runserver", "7100","--noreload"])
+    #br = threading.Thread(target=browser, args=())
+    #br.start()
+    main(["openeft.py", "runserver", "0.0.0.0:7100","--noreload"])
     x.cleanup()
