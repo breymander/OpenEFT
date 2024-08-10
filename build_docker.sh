@@ -1,14 +1,13 @@
 #!/usr/bin/bash
 
 mkdir build
-mkdir -p browser/linux
 echo "Updating Submodules"
 git submodule update
 echo "Setting Up NBIS"
 cd nbis
 echo "Patch AN2K & unistd"
-patch -p0 < 0000-use-extern-header-an2k.patch
-patch -p0 < 0001-include-unistd-header-linux.patch
+patch -p0 < ../0000-use-extern-header-an2k.patch
+patch -p0 < ../0001-include-unistd-header-linux.patch
 ./setup.sh ${PWD}/../build --64 --without-X11
 echo "Configuring NBIS"
 make config
